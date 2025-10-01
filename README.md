@@ -1,9 +1,10 @@
 # Proyecto AUTOS_AJH
 
 Mi nombre es Axel Jamil Molina Huete
+estudiante de 5to año
 Estudiante de Ingenieria en ciencias de la computacion
 
-Este repositorio es sobrela *Actividad t2.1: Diseño de Base de Datos y Configuraciones en SQL Server*, de la tutoria de Base de Datos.
+Este repositorio es sobrela *Actividad  Diseño de Base de Datos y Configuraciones en SQL Server*, de la tutoria de Base de Datos.
 
 ## Contenido del repositorio
 
