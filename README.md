@@ -33,6 +33,5 @@ Se grabó un video explicativo que muestra:
 2. Asignación del rol dbo a la base de datos Autos Narla.  
 3. Validación de que el usuario puede iniciar sesión y ejecutar consultas.  
 
-📹 *Enlace al video:* [Agregar aquí el link de Drive o YouTube]  
 
 ---
