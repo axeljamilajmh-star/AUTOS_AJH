@@ -1,15 +1,14 @@
--- Transaction_SQL.sql
-USE [Autos_AJMH]; -- CAMBIA si tu base no se llama así
+USE [Autos_AJMH];
 GO
 SET NOCOUNT ON;
 SET XACT_ABORT ON;
 
--- TRANSACCIÓN 1
+-- TRANSACCIÓN 1: Insertar nuevo vehículo
 PRINT '--- Transacción 1: Insertar vehículo ---';
 BEGIN TRANSACTION;
 BEGIN TRY
-    INSERT INTO dbo.Vehiculo (Marca, Modelo, Anio, Precio, Estado)
-    VALUES ('Toyota', 'Corolla', 2022, 18500, 'Disponible');
+    INSERT INTO dbo.Vehiculo (ModeloID, VIN, Color, Precio, Ano, PropietarioID, Estado)
+    VALUES (1, 'VIN0002', 'Azul', 18500, 2022, 1, 'Disponible');
 
     COMMIT TRANSACTION;
     PRINT 'Transacción 1: COMMIT';
@@ -20,22 +19,24 @@ BEGIN CATCH
 END CATCH;
 GO
 
--- TRANSACCIÓN 2
+-- TRANSACCIÓN 2: Registrar venta
 PRINT '--- Transacción 2: Registrar venta ---';
 BEGIN TRANSACTION;
 BEGIN TRY
-    DECLARE @IdCliente INT = 1;
-    DECLARE @IdVehiculo INT = 1;
-    DECLARE @Total DECIMAL(18,2);
+    DECLARE @VehiculoID INT = 1;
+    DECLARE @Precio DECIMAL(12,2);
 
-    SELECT @Total = Precio FROM dbo.Vehiculo WHERE IdVehiculo = @IdVehiculo;
-    IF @Total IS NULL
+    -- Obtener precio del vehículo
+    SELECT @Precio = Precio FROM dbo.Vehiculo WHERE VehiculoID = @VehiculoID;
+    IF @Precio IS NULL
         THROW 51000, 'Vehículo no encontrado.', 1;
 
-    INSERT INTO dbo.Venta (IdCliente, IdVehiculo, Fecha, Total)
-    VALUES (@IdCliente, @IdVehiculo, SYSDATETIME(), @Total);
+    -- Registrar venta
+    INSERT INTO dbo.Venta (VehiculoID, Fecha, PrecioVenta, Comprador)
+    VALUES (@VehiculoID, SYSDATETIME(), @Precio, 'Cliente A');
 
-    UPDATE dbo.Vehiculo SET Estado = 'Vendido' WHERE IdVehiculo = @IdVehiculo;
+    -- Actualizar estado del vehículo
+    UPDATE dbo.Vehiculo SET Estado = 'Vendido' WHERE VehiculoID = @VehiculoID;
 
     COMMIT TRANSACTION;
     PRINT 'Transacción 2: COMMIT';
@@ -46,12 +47,15 @@ BEGIN CATCH
 END CATCH;
 GO
 
--- TRANSACCIÓN 3 (rollback forzado)
-PRINT '--- Transacción 3: Actualizar cliente (demo rollback) ---';
+-- TRANSACCIÓN 3: Actualizar propietario (demostración de rollback)
+PRINT '--- Transacción 3: Actualizar propietario (demo rollback) ---';
 BEGIN TRANSACTION;
 BEGIN TRY
-    UPDATE dbo.Cliente SET Telefono = '88889999' WHERE IdCliente = 1;
+    UPDATE dbo.Propietario
+    SET Telefono = '88889999'
+    WHERE PropietarioID = 1;
 
+    -- Forzar error para demostrar ROLLBACK
     THROW 52001, 'Error forzado para demostrar ROLLBACK.', 1;
 
     COMMIT TRANSACTION;
@@ -61,6 +65,14 @@ BEGIN CATCH
     PRINT CONCAT('Transacción 3: ROLLBACK -> ', ERROR_MESSAGE());
 END CATCH;
 GO
-SELECT TOP 10 * FROM dbo.Vehiculo ORDER BY IdVehiculo DESC;
-SELECT TOP 10 * FROM dbo.Venta ORDER BY IdVenta DESC;
-SELECT * FROM dbo.Cliente WHERE IdCliente = 1;
+
+-- CONSULTAS FINALES
+-- Mostrar últimos vehículos insertados
+SELECT TOP 10 * FROM dbo.Vehiculo ORDER BY VehiculoID DESC;
+
+-- Mostrar últimas ventas
+SELECT TOP 10 * FROM dbo.Venta ORDER BY VentaID DESC;
+
+-- Mostrar información del propietario 1
+SELECT * FROM dbo.Propietario WHERE PropietarioID = 1;
+GO
