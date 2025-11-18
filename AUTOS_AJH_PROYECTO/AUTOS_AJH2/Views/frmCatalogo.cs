@@ -4,11 +4,15 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using AUTOS_AJH2.Models;
+
 
 namespace AUTOS_AJH.Views
 {
     public class FrmCatalogo : Form
     {
+        DB_AUTO bd = new DB_AUTO();
+
         private readonly AutoController _controller;
         private DataGridView dgvAutos;
 
@@ -270,11 +274,13 @@ namespace AUTOS_AJH.Views
         {
             try
             {
-                var autos = _controller.ObtenerAutosDisponibles();
+                var autos = bd.ObtenerAutos(); // <-- ahora carga desde la base de datos
                 dgvAutos.DataSource = autos;
 
-                // Mostrar mensaje de éxito
-                this.Text = $"Catálogo - {autos.Count} vehículos - AUTOS AJH";
+                // Mostrar mensaje con cantidad de autos
+                this.Text = $"Catálogo - {autos.Rows.Count} vehículos - AUTOS AJH";
+
+
             }
             catch (Exception ex)
             {
@@ -282,6 +288,7 @@ namespace AUTOS_AJH.Views
                               MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void SortCars(string criterion)
         {

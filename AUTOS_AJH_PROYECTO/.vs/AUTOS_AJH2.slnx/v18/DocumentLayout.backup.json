@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\AUTOS_AJH\\AUTOS_AJH_PROYECTO\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Trabajofinal_AxelJamilMolinaHuete\\AUTOS_AJH_PROYECTO\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B0F8375D-029B-4757-8916-634DF6F5DB9B}|AUTOS_AJH2\\AUTOS_AJH2.csproj|C:\\Users\\User\\Desktop\\AUTOS_AJH\\AUTOS_AJH_PROYECTO\\autos_ajh2\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B0F8375D-029B-4757-8916-634DF6F5DB9B}|AUTOS_AJH2\\AUTOS_AJH2.csproj|c:\\users\\user\\desktop\\trabajofinal_axeljamilmolinahuete\\autos_ajh_proyecto\\autos_ajh2\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B0F8375D-029B-4757-8916-634DF6F5DB9B}|AUTOS_AJH2\\AUTOS_AJH2.csproj|solutionrelative:autos_ajh2\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B0F8375D-029B-4757-8916-634DF6F5DB9B}|AUTOS_AJH2\\AUTOS_AJH2.csproj|c:\\users\\user\\desktop\\autos_ajh\\autos_ajh_proyecto\\autos_ajh2\\controllers\\autocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0F8375D-029B-4757-8916-634DF6F5DB9B}|AUTOS_AJH2\\AUTOS_AJH2.csproj|solutionrelative:autos_ajh2\\controllers\\autocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B0F8375D-029B-4757-8916-634DF6F5DB9B}|AUTOS_AJH2\\AUTOS_AJH2.csproj|C:\\Users\\User\\Desktop\\Trabajofinal_AxelJamilMolinaHuete\\AUTOS_AJH_PROYECTO\\autos_ajh2\\models\\db_auto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0F8375D-029B-4757-8916-634DF6F5DB9B}|AUTOS_AJH2\\AUTOS_AJH2.csproj|solutionrelative:autos_ajh2\\models\\db_auto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0F8375D-029B-4757-8916-634DF6F5DB9B}|AUTOS_AJH2\\AUTOS_AJH2.csproj|C:\\Users\\User\\Desktop\\Trabajofinal_AxelJamilMolinaHuete\\AUTOS_AJH_PROYECTO\\autos_ajh2\\views\\frmagregarauto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0F8375D-029B-4757-8916-634DF6F5DB9B}|AUTOS_AJH2\\AUTOS_AJH2.csproj|solutionrelative:autos_ajh2\\views\\frmagregarauto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +22,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AutoController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\AUTOS_AJH\\AUTOS_AJH_PROYECTO\\AUTOS_AJH2\\Controllers\\AutoController.cs",
-              "RelativeDocumentMoniker": "AUTOS_AJH2\\Controllers\\AutoController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\AUTOS_AJH\\AUTOS_AJH_PROYECTO\\AUTOS_AJH2\\Controllers\\AutoController.cs",
-              "RelativeToolTip": "AUTOS_AJH2\\Controllers\\AutoController.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAEwBAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "frmAgregarAuto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Trabajofinal_AxelJamilMolinaHuete\\AUTOS_AJH_PROYECTO\\AUTOS_AJH2\\Views\\frmAgregarAuto.cs",
+              "RelativeDocumentMoniker": "AUTOS_AJH2\\Views\\frmAgregarAuto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Trabajofinal_AxelJamilMolinaHuete\\AUTOS_AJH_PROYECTO\\AUTOS_AJH2\\Views\\frmAgregarAuto.cs",
+              "RelativeToolTip": "AUTOS_AJH2\\Views\\frmAgregarAuto.cs",
+              "ViewState": "AgIAAGYBAAAAAAAAAAAAAHABAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T02:44:37.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T03:41:33.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DB_AUTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Trabajofinal_AxelJamilMolinaHuete\\AUTOS_AJH_PROYECTO\\AUTOS_AJH2\\Models\\DB_AUTO.cs",
+              "RelativeDocumentMoniker": "AUTOS_AJH2\\Models\\DB_AUTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Trabajofinal_AxelJamilMolinaHuete\\AUTOS_AJH_PROYECTO\\AUTOS_AJH2\\Models\\DB_AUTO.cs",
+              "RelativeToolTip": "AUTOS_AJH2\\Models\\DB_AUTO.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAADwv4QAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T02:41:58.544Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "frmPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\AUTOS_AJH\\AUTOS_AJH_PROYECTO\\AUTOS_AJH2\\Views\\frmPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Trabajofinal_AxelJamilMolinaHuete\\AUTOS_AJH_PROYECTO\\AUTOS_AJH2\\Views\\frmPrincipal.cs",
               "RelativeDocumentMoniker": "AUTOS_AJH2\\Views\\frmPrincipal.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\AUTOS_AJH\\AUTOS_AJH_PROYECTO\\AUTOS_AJH2\\Views\\frmPrincipal.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Trabajofinal_AxelJamilMolinaHuete\\AUTOS_AJH_PROYECTO\\AUTOS_AJH2\\Views\\frmPrincipal.cs",
               "RelativeToolTip": "AUTOS_AJH2\\Views\\frmPrincipal.cs",
-              "ViewState": "AgIAAB8BAAAAAAAAAAAowCEBAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-06T04:10:20.398Z",
               "EditorCaption": ""

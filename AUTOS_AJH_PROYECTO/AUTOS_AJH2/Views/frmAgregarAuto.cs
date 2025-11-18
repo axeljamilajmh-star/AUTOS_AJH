@@ -4,11 +4,15 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using AUTOS_AJH2.Models;
+
 
 namespace AUTOS_AJH.Views
 {
     public class FrmAgregarAuto : Form
     {
+        DB_AUTO bd = new DB_AUTO();
+
         private readonly AutoController _controller;
         private Panel panelPrincipal;
         private Panel panelHeader;
@@ -356,8 +360,13 @@ namespace AUTOS_AJH.Views
                     Disponible = true
                 };
 
-                // Intentar agregar el auto
+                // Guardar en memoria
                 _controller.AgregarAuto(nuevoAuto);
+
+                // Guardar en la base de datos
+                bd.InsertarAuto(nuevoAuto);
+
+                ;
 
                 // Mostrar mensaje de éxito
                 MessageBox.Show($"✅ Vehículo agregado exitosamente!\n\n" +
@@ -381,6 +390,7 @@ namespace AUTOS_AJH.Views
                               MessageBoxIcon.Error);
             }
         }
+
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {

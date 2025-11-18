@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AutoController.cs" />
     <Compile Include="Models\Auto.cs" />
+    <Compile Include="Models\DB_AUTO.cs" />
     <Compile Include="Models\Venta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "4309a694-587d-450d-bcf3-8392305e6034",
+    "CodigoAuto": "HON002",
+    "FechaVenta": "2025-11-17T21:52:55.5506575-06:00",
+    "PrecioVenta": 36500.0,
+    "DescuentoAplicado": 1825.000,
+    "PrecioFinal": 34675.000,
+    "Vendedor": "jamil huete",
+    "Cliente": "axel molina"
+  }
+]
