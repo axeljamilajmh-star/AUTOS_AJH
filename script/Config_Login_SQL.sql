@@ -1,10 +1,43 @@
--- CREACIÓN DE LA BASE DE DATOS Y TABLAS
+============================================================
+--  CREACIÓN DEL LOGIN A NIVEL SERVIDOR Y USUARIO EN LA BD
+-- ============================================================
+
+USE master;
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.server_principals WHERE name = N'autos_narla')
+BEGIN
+    CREATE LOGIN [autos_narla]
+    WITH PASSWORD = N'Autos_NarlaPG25',
+         CHECK_POLICY = OFF,
+         CHECK_EXPIRATION = OFF;
+    PRINT 'LOGIN autos_narla creado a nivel servidor.';
+END
+ELSE
+    PRINT 'LOGIN autos_narla ya existe a nivel servidor.';
+GO
+
+--  CREACIÓN DE LA BASE DE DATOS Y TABLAS
 
 IF DB_ID('Autos_AJMH') IS NULL
     CREATE DATABASE Autos_AJMH;
 GO
 
 USE Autos_AJMH;
+GO
+
+-- Crear usuario en la BD y asignar rol db_owner
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'autos_narla')
+BEGIN
+    CREATE USER [autos_narla] FOR LOGIN [autos_narla];
+    PRINT 'USUARIO autos_narla creado en la BD.';
+END
+ELSE
+    PRINT 'USUARIO autos_narla ya existe en la BD.';
+GO
+
+EXEC sp_addrolemember 'db_owner', 'autos_narla';
+PRINT 'USUARIO autos_narla agregado a db_owner.';
 GO
 
 -- Tabla Marca
@@ -55,7 +88,8 @@ CREATE TABLE IF NOT EXISTS Venta (
 );
 GO
 
--- INSERCIÓN DE DATOS INICIALES
+--  DE DATOS INICIALES
+
 INSERT INTO Marca (Nombre) VALUES ('Toyota'), ('Ford'), ('Honda');
 
 INSERT INTO Modelo (MarcaID, Nombre, Ano)
@@ -73,7 +107,8 @@ INSERT INTO Venta (VehiculoID, Fecha, PrecioVenta, Comprador)
 VALUES (1, '2024-05-15', 14000, 'Cliente A');
 GO
 
--- TRANSACCIONES
+--  TRANSACCIONES CORREGIDAS
+
 
 SET NOCOUNT ON;
 SET XACT_ABORT ON;
@@ -119,7 +154,7 @@ BEGIN CATCH
 END CATCH;
 GO
 
--- TRANSACCIÓN 3: Actualizar propietario (demo rollback)
+-- TRANSACCIÓN 3: Actualizar propietario
 PRINT '--- Transacción 3: Actualizar propietario (demo rollback) ---';
 BEGIN TRANSACTION;
 BEGIN TRY
@@ -137,7 +172,8 @@ BEGIN CATCH
 END CATCH;
 GO
 
--- CONSULTAS FINALES
+--  CONSULTAS FINALES
+
 
 SELECT TOP 10 * FROM dbo.Vehiculo ORDER BY VehiculoID DESC;
 SELECT TOP 10 * FROM dbo.Venta ORDER BY VentaID DESC;
